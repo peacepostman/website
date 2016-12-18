@@ -1,3 +1,3 @@
-# My perosnnal website
+# My personnal website
 
-A simple webpage to display my current situation and some usefull informations
+A simple webpage to display my current situation and some usefull informations.
