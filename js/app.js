@@ -16,7 +16,7 @@ var clipboard = new Clipboard(document.getElementsByClassName("is-email")[0], {
     }
 });
 clipboard.on('success', function(e) {
-    _renderGrowl("L' email <strong>" + e.text + "</strong> a été ajouté à votre presse papier (ctrl+v pour coller)");
+    _renderGrowl("Le mail <strong>" + e.text + "</strong> a été ajouté à votre presse papier (ctrl+v pour coller)");
 });
 /*!
 *  Public function

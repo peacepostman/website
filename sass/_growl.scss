@@ -14,14 +14,14 @@
   visibility: hidden;
   opacity: 0;
   transform: translateX(150%);
-  transition: opacity 0.6s ease-in-out, visibility 0.2s ease-in-out, transform 0.4s cubic-bezier(0.71, 1.7, 0.77, 1.24);
+  transition: opacity 0.6s ease-in, visibility 0.2s ease-in, transform 0.4s cubic-bezier(0.71, 1.7, 0.77, 1.24);
   &.is-active {
     visibility: visible;
     opacity: 1;
     transform: translateX(0%);
   }
   @include angled-edge('outside bottom', 'lower right', #ffffff, $width: 2800, $height: 50);
-  position: absolute;
+  position: fixed;
 
   &:after {
     bottom: -30px;

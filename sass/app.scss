@@ -54,6 +54,7 @@ $app-color: (#8dcaa8, #6d9ad0, #e36e6e, #e6cc97, #e4e697, #d095e6);
   padding: 5px 0;
   background-color: #fff;
   @include angled-edge('outside top', 'upper left', #ffffff, $width: 2800, $height: 50);
+  position: fixed;
 }
 
 .is-content {
@@ -78,16 +79,23 @@ $app-color: (#8dcaa8, #6d9ad0, #e36e6e, #e6cc97, #e4e697, #d095e6);
     display: inline-block;
     margin-right: 5px;
     padding: 2px;
-  }
 
-  @media screen and (max-width: 520px){
-    right: 20px;
-    top: -15px;
+    &:last-child {
+      a {
+        margin-right: 0px;
+      }
+    }
+
   }
 
   @media screen and (max-width: 1200px){
-    right: 20px;
+    right: 30px;
     top: -17px;
+  }
+
+  @media screen and (max-width: 520px){
+    right: 30px;
+    top: -15px;
   }
 }
 
