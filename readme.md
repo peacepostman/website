@@ -1,4 +1,4 @@
-# My personnal website
+# personnal webcard
 
 A simple webpage to display my current situation and some usefull informations.
 
