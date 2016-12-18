@@ -9,7 +9,7 @@ module.exports = function(grunt) {
           style: 'compressed'
         },
         files: {
-          'css/app.css': 'css/sass/app.scss',
+          'dist/css/app.min.css': 'sass/app.scss',
         }
       }
     },
@@ -24,7 +24,7 @@ module.exports = function(grunt) {
        ]
      },
      dist: {
-       src: 'css/*.css'
+       src: 'dist/css/*.css'
      }
    },
 
@@ -43,8 +43,30 @@ module.exports = function(grunt) {
         tasks: ['default'],
       },
       src: {
-        files: ['css/*.css', 'css/sass/*.scss', 'index.html'],
+        files: ['sass/*.scss', 'index.html'],
         tasks: ['default'],
+      }
+    },
+
+    uglify: {
+      dist: {
+        files: {
+          'dist/js/app.min.js': ['js/app.js']
+        }
+      }
+    },
+
+
+    htmlmin: {
+      dist: {
+        options: {
+          removeComments: true,
+          collapseWhitespace: true
+        },
+        files: {
+          'dist/index.html': 'index.html',
+          'dist/404.html': '404.html'
+        }
       }
     }
   });
@@ -52,8 +74,12 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-sass');
   grunt.loadNpmTasks('grunt-postcss');
+  grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-htmlmin');
   grunt.registerTask('default', [
     'sass:dist',
+    'uglify:dist',
+    'htmlmin:dist',
     'postcss',
     'watch'
   ]);
