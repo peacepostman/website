@@ -1,8 +1,9 @@
 {
-  "name": "first-app",
+  "name": "personnal-website",
   "version": "0.1.0",
-  "description": "Ma page simple",
+  "description": "A simple and cute personnal website",
   "url": "http://benjamin.grauwin.me",
+  "author": "peacepostman",
   "devDependencies": {
     "grunt": "^1.0.1",
     "grunt-contrib-sass": "^1.0.0",
