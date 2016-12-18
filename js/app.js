@@ -16,7 +16,7 @@ var clipboard = new Clipboard(document.getElementsByClassName("is-email")[0], {
     }
 });
 clipboard.on('success', function(e) {
-    _renderGrowl("Le mail <strong>" + e.text + "</strong> a été ajouté à votre presse papier (ctrl+v pour coller)");
+    _renderGrowl("Le mail <strong>" + e.text + "</strong> a été ajouté à votre presse papier (ctrl+v pour coller)", true);
 });
 /*!
 *  Public function
@@ -29,7 +29,7 @@ var clipboardBis = new Clipboard(document.getElementsByClassName("is-phone")[0],
     }
 });
 clipboardBis.on('success', function(e) {
-    _renderGrowl("Le numéro <strong>" + e.text + "</strong> a été ajouté à votre presse papier (ctrl+v pour coller)");
+    _renderGrowl("Le numéro <strong>" + e.text + "</strong> a été ajouté à votre presse papier (ctrl+v pour coller)", false);
 });
 /*!
 *  Public function
@@ -59,14 +59,19 @@ function _simulateHover(item, index){
 *
 *  - Render growl content
 */
-function _renderGrowl(text){
+function _renderGrowl(text, alt){
   var div = document.getElementsByClassName("is-response")[0];
   var div_body = document.getElementsByClassName("is-response-body")[0];
-  div_body.innerHTML = '<span class="is-check"></span>' + text;
+  var _class = '';
+  if(alt){
+    _class = ' is-second ';
+  }
+
+  div_body.innerHTML = '<span class="is-check'+ _class +'"></span>' + text;
   div.className = "is-response is-active";
   setTimeout(function(){
     div_check = document.getElementsByClassName("is-check")[0];
-    div_check.className = "is-check is-active";
+    div_check.className = "is-check is-active"+_class;
   }, 400);
   setTimeout(function(){
     div.className = "is-response";
