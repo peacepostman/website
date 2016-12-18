@@ -14,6 +14,7 @@ module.exports = function(grunt) {
       }
     },
 
+    // Preffix css with appropriate browser prefix
     postcss: {
      options: {
        map: true,
@@ -27,7 +28,7 @@ module.exports = function(grunt) {
      }
    },
 
-
+   // Watch project's files
     watch: {
       configFiles: {
         files: [
@@ -47,6 +48,7 @@ module.exports = function(grunt) {
       }
     },
 
+    // Compress js
     uglify: {
       dist: {
         files: {
@@ -55,7 +57,22 @@ module.exports = function(grunt) {
       }
     },
 
+    // Add version suffixe on css & script
+    processhtml: {
+      options: {
+        data: {
+          version: '1.0.1'
+        }
+      },
+      dist: {
+        files: {
+          'dist/index.html': 'index.html',
+          'dist/404.html': '404.html'
+        }
+      }
+    },
 
+    // Commpress html
     htmlmin: {
       dist: {
         options: {
@@ -63,8 +80,8 @@ module.exports = function(grunt) {
           collapseWhitespace: true
         },
         files: {
-          'dist/index.html': 'index.html',
-          'dist/404.html': '404.html'
+          'dist/index.html': 'dist/index.html',
+          'dist/404.html': 'dist/404.html'
         }
       }
     }
@@ -75,11 +92,13 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-postcss');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-htmlmin');
+  grunt.loadNpmTasks('grunt-processhtml');
   grunt.registerTask('default', [
     'sass:dist',
     'uglify:dist',
-    'htmlmin:dist',
+    'processhtml',
     'postcss',
+    'htmlmin',
     'watch'
   ]);
 };

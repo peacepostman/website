@@ -7,13 +7,20 @@
 		<title>Erreur 404 - Benjamin Grauwin - Développeur, intégrateur &amp; chef de projet</title>
 		<link rel="icon" type="image/png" href="/favicon.png" />
 		<link href="https://fonts.googleapis.com/css?family=Roboto:400,700" rel="stylesheet" type="text/css"/>
-		<link href="css/app.min.css" rel="stylesheet" type="text/css"/>
+		<!-- build:template
+		<link href="css/app.min.css?v=<%= version %>" rel="stylesheet" type="text/css"/>
+		/build -->
 	</head>
-	<body data-version="1">
+	<!-- build:template
+	<body data-version="<%= version %>">
+	/build -->
 		<section class="is-fullsize">
+			<!-- is-response -->
 			<div class="is-response">
 				<div class="is-response-body"></div>
 			</div>
+			<!-- /is-response -->
+			<!-- is-body -->
 		  <div class="is-body">
 		    <div class="is-content">
 		      <h1>
@@ -27,6 +34,8 @@
 					</a>
 		    </div>
 		  </div>
+			<!-- /is-body -->
+			<!-- is-footer -->
 			<footer class="is-footer">
 				<div class="is-link">
 					<a data-tooltip="Phone" title="Phone" class="is-phone">
@@ -41,12 +50,15 @@
 					<a data-tooltip="LinkedIn" title="LinkedIn" href="https://fr.linkedin.com/in/benjamin-grauwin-713081118">
 						<span class="is-led is-gamma"></span>
 					</a>
-					<a data-tooltip="Github" title="Github" href="https://github.com/netcap-agency">
+					<a data-tooltip="Github" title="Github" href="https://github.com/peacepostman/">
 						<span class="is-led is-epsilon"></span>
 					</a>
 				</div>
 			</footer>
+			<!-- /is-footer -->
 		</section>
-		<script type="text/javascript" src="js/app.min.js"></script>
+		<!-- build:template
+		<script type="text/javascript" src="js/app.min.js?v=<%= version %>"></script>
+		/build -->
 	</body>
 </html>
