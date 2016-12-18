@@ -1,0 +1,15 @@
+{
+  "name": "first-app",
+  "version": "0.1.0",
+  "description": "Ma page simple",
+  "url": "http://benjamin.grauwin.me",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0"
+  },
+  "dependencies": {
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0"
+  }
+}
