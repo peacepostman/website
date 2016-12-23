@@ -40,11 +40,11 @@ module.exports = function(grunt) {
       },
       gruntfile: {
         files: 'Gruntfile.js',
-        tasks: ['default'],
+        tasks: ['watching'],
       },
       src: {
-        files: ['sass/*.scss', 'js/*.js', 'index.html'],
-        tasks: ['default'],
+        files: ['package.json', 'sass/*.scss', 'js/*.js', 'index.html'],
+        tasks: ['watching'],
       }
     },
 
@@ -61,7 +61,7 @@ module.exports = function(grunt) {
     processhtml: {
       options: {
         data: {
-          version: '1.0.1'
+          version: '<%= pkg.version %>'
         }
       },
       dist: {
@@ -84,6 +84,23 @@ module.exports = function(grunt) {
           'dist/404.html': 'dist/404.html'
         }
       }
+    },
+
+    // Serve file
+    connect: {
+      server: {
+        options: {
+          port: 8000,
+          open: true,
+          livereload: true,
+          base: {
+            path: 'dist',
+            options: {
+              index: 'index.html'
+            }
+          }
+        }
+      }
     }
   });
 
@@ -93,12 +110,22 @@ module.exports = function(grunt) {
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-htmlmin');
   grunt.loadNpmTasks('grunt-processhtml');
+  grunt.loadNpmTasks('grunt-contrib-connect');
+  grunt.registerTask('watching', [
+    'sass:dist',
+    'uglify:dist',
+    'processhtml',
+    'postcss',
+    'htmlmin',
+    'watch'
+  ]);
   grunt.registerTask('default', [
     'sass:dist',
     'uglify:dist',
     'processhtml',
     'postcss',
     'htmlmin',
+    'connect',
     'watch'
   ]);
 };

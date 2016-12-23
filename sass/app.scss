@@ -47,6 +47,36 @@ $app-color: (#8dcaa8, #6d9ad0, #e36e6e, #e6cc97, #e4e697, #d095e6);
   }
 }
 
+.is-agency {
+  position: relative;
+  color: inherit;
+  text-decoration: none;
+  color: #fff;
+  opacity: .5;
+  animation: agency 8s linear infinite;
+}
+
+//  Animation agency name
+//
+//******************************
+@keyframes agency {
+    0%{
+      opacity: .5;
+    }
+    15%{
+      opacity: .9;
+    }
+    50%{
+      opacity: .4;
+    }
+    75%{
+      opacity: .8;
+    }
+    100%{
+      opacity: .6;
+    }
+}
+
 .is-footer {
   bottom: 0;
   left: 0;
@@ -97,8 +127,4 @@ $app-color: (#8dcaa8, #6d9ad0, #e36e6e, #e6cc97, #e4e697, #d095e6);
     right: 30px;
     top: -15px;
   }
-}
-
-.is-company {
-  margin-top: 10px;
 }
