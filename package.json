@@ -1,26 +1,32 @@
 {
-  "name": "personnal-website",
-  "version": "0.1.1",
-  "description": "A simple and cute personnal website",
-  "url": "http://benjamin.grauwin.me",
-  "author": "peacepostman",
-  "devDependencies": {
-    "autoprefixer": "^6.6.0",
-    "grunt": "^1.0.1",
-    "grunt-contrib-connect": "^1.0.2",
-    "grunt-contrib-htmlmin": "^2.0.0",
-    "grunt-contrib-sass": "^1.0.0",
-    "grunt-contrib-uglify": "^2.0.0",
-    "grunt-contrib-watch": "^1.0.0",
-    "grunt-postcss": "^0.8.0",
-    "grunt-processhtml": "^0.4.1",
-    "pixrem": "^3.0.2"
+  "name": "personal-website",
+  "version": "2.0.0",
+  "description": "New Personnal website using Gatsby",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/peacepostman/website.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/peacepostman/website/issues"
+  },
+  "homepage": "https://github.com/peacepostman/website#readme",
   "dependencies": {
-    "autoprefixer": "^6.6.0",
-    "grunt-contrib-sass": "^1.0.0",
-    "grunt-contrib-watch": "^1.0.0",
-    "grunt-postcss": "^0.8.0",
-    "pixrem": "^3.0.2"
+    "babel-plugin-styled-components": "^1.11.1",
+    "gatsby": "^2.24.65",
+    "gatsby-plugin-google-fonts": "^1.0.1",
+    "gatsby-plugin-styled-components": "^3.3.11",
+    "granim": "^2.0.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "styled-components": "^5.2.0"
+  },
+  "devDependencies": {
+    "@types/styled-components": "^5.1.3"
   }
 }
